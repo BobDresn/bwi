@@ -5,7 +5,6 @@ import (
 	"log"
 	"os"
 	"runtime"
-	"strings"
 	"time"
 )
 
@@ -41,4 +40,21 @@ func logWithLevel(level LogLevel, label string, format string, args ...interface
 	timestamp := time.Now().Format("15:04:05:000")
 	msg := fmt.Sprintf(format, args...)
 	logger.Printf("[%s] %-5s %s:%d: %s", timestamp, label, shortFile, line, msg)
+}
+
+func Debug(msg string, args ...interface{}) {
+	logWithLevel(LevelDebug, "DEBUG", msg, args...)
+}
+
+func Info(msg string, args ...interface{}) {
+	logWithLevel(LevelInfo, "INFO", msg, args...)
+}
+
+func Warn(msg string, args ...interface{}) {
+	logWithLevel(LevelWarn, "WARN", msg, args...)
+}
+
+func Error(msg string, args ...interface{}) {
+
+	logWithLevel(LevelError, "ERROR", msg, args...)
 }

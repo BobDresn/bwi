@@ -1,10 +1,10 @@
 package shared
 
 import (
-	"bytes",
-	"strings",
-	"testing",
-	"regexp",
+	"bytes";
+	"strings";
+	"testing";
+	"regexp";
 )
 
 func TestLogLevelAllowsOutput(t *testing.T) {
@@ -43,7 +43,7 @@ func TestLogIncludesFileLine(t *testing.T) {
 func TestTimeFormat(t *testing.T) {
 	var buf bytes.Buffer
 	logger.SetOutput(&buf)
-	SetLogLevel(levelDebug)
+	SetLogLevel(LevelDebug)
 
 	Debug("check timestamp")
 
